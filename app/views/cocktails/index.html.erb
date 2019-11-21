@@ -4,19 +4,17 @@
     <h4>Have a look at our dope cocktail recipes!</h4>
     <p>Become a part of the crazy cocktail community and share your favorite cocktail recipe with us!</p>
     <%= link_to "Create a new Cocktail", new_cocktail_path, class: "btn btn-ghost" %>
-
   </div>
 </div>
 
 <div class="container m-4">
   <h4>🍸 Explore our dope cocktail recipes 🍹</h4>
   <div class="cards">
-    <ul>
-      <% @cocktails.each do |cocktail| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-      </ul>
-      <% end %>
+    <% @cocktails.each do |cocktail| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo %>')">
+      <%= link_to cocktail.name, cocktail_path(cocktail) %>
     </div>
+    <% end %>
   </div>
 </div>
+
