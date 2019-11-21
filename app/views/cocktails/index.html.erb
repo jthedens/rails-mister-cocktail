@@ -1,10 +1,22 @@
-<h1>Which Cocktail would you like to try?</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="container" style="line-height: 1.5">
+    <h1 class="m-4">Ready for a fun night out?</h1>
+    <h4>Have a look at our dope cocktail recipes!</h4>
+    <p>Become a part of the crazy cocktail community and share your favorite cocktail recipe with us!</p>
+    <%= link_to "Create a new Cocktail", new_cocktail_path, class: "btn btn-ghost" %>
 
+  </div>
+</div>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  <% end %>
-</ul>
-
-<%= link_to "Create a new Cocktail", new_cocktail_path  %>
+<div class="container m-4">
+  <h4>🍸 Explore our dope cocktail recipes 🍹</h4>
+  <div class="cards">
+    <ul>
+      <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
