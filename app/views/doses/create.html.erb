@@ -1,7 +1,10 @@
-<h1>Add some ingeredients to your awesome <%= cocktail.name %> recipe!</h1>
-
-<%= simple_form_for() do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingeredient %>
-  <%= f.submit "Shake it!", class: "btn btn-danger" %>
-<% end %>
+<div class="container justify-content-center">
+  <div class="col-12">
+    <h1>Add some ingeredients to your awesome <%= cocktail.name %> recipe!</h1>
+    <%= simple_form_for() do |f| %>
+      <%= f.input :description %>
+      <%= f.association :ingeredient %>
+      <%= f.submit "Shake it!", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>

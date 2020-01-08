@@ -1,7 +1,10 @@
-<h1>Add some ingeredients to your awesome <%= @cocktail.name %> recipe!</h1>
-
-<%= simple_form_for([@cocktail, @dose]) do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit "Shake it!", class: "btn btn-danger" %>
-<% end %>
+<div class="container justify-content-center mt-4">
+  <div class="col-12">
+    <h1>Add some ingeredients to your awesome <%= @cocktail.name %> recipe!</h1>
+    <%= simple_form_for([@cocktail, @dose]) do |f| %>
+      <%= f.input :description %>
+      <%= f.association :ingredient %>
+      <%= f.submit "Shake it!", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>

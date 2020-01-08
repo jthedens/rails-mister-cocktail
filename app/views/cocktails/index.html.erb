@@ -7,13 +7,17 @@
   </div>
 </div>
 
-<div class="container m-4">
+<div class="cocktail-container m-4">
   <h4>🍸 Explore our dope cocktail recipes 🍹</h4>
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo %>')">
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    </div>
+      <%= link_to cocktail_path(cocktail) do %>
+      <% if cocktail.photo.present? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo %>')">
+      <% end %>
+        <%= cocktail.name %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
